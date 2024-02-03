@@ -1,0 +1,24 @@
+#ETH/USDT
+🟢 LONG
+✅ Entry: 2075
+🔰 Leverage : Cross 30X
+
+#GAL/USDT
+🟢 SHORT
+✅ Entry: 1.9245
+🔰 Leverage : Cross 10X
+
+#BTC/USDT
+🟢 SHORT
+✅ Entry: 42045.76
+🔰 Leverage : Cross 10X
+
+#ONDO/USDT
+🟢 LONG
+✅ Entry: 0.2670
+🔰 Leverage : Cross 20X
+
+#SUI/USDT
+🟢 SHORT
+✅ Entry: 1.4212
+🔰 Leverage : Cross 20X
