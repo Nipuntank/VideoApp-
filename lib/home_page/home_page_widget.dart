@@ -92,13 +92,15 @@ class _HomePageWidgetState extends State<HomePageWidget> {
     final String? token = await storage.read(key: 'token');
     GlobalState.enteredText = enteredText;
 
-    final http.Response response = await http.post(
-      Uri.parse('http://${GlobalState.apiIP}:8282/make_videos'),
-      headers: <String, String>{
-        'Content-Type': 'application/json; charset=UTF-8',
-      },
-      body: jsonEncode({'token': token, 'message': enteredText}),
-    );
+    final http.Response response = await http
+        .post(
+          Uri.parse('http://${GlobalState.apiIP}:8282/make_videos'),
+          headers: <String, String>{
+            'Content-Type': 'application/json; charset=UTF-8',
+          },
+          body: jsonEncode({'token': token, 'message': enteredText}),
+        )
+        .timeout(const Duration(minutes: 2));
 
     final message = jsonDecode(response.body)['message'];
 
