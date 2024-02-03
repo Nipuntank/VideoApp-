@@ -52,7 +52,7 @@ class _ChangePercentState extends State<ChangePercent> {
   void initState() {
     super.initState();
     // Initialize with a default value
-    randomValue = 0.0;
+    randomValue = generateRandomValue();
 
     // Start a timer to update the random value every second
     Timer.periodic(Duration(seconds: 1), (timer) {
@@ -67,8 +67,19 @@ class _ChangePercentState extends State<ChangePercent> {
   }
 
   double generateRandomValue() {
-    return 1.0 +
-        (Random().nextDouble() * 3.0); // Random initial value between 1 and 4
+    double difference = Random().nextDouble() * 0.1;
+
+    // Flip a coin to determine whether to add or subtract the difference
+    if (Random().nextBool()) {
+      randomValue += difference;
+    } else {
+      randomValue -= difference;
+    }
+
+    // Ensure the value stays within the range of 1 to 4
+    randomValue = randomValue.clamp(1.0, 4.0);
+
+    return randomValue;
   }
 
   @override
